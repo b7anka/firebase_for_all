@@ -196,9 +196,11 @@ packages:
   firebase_auth_desktop:
     dependency: transitive
     description:
-      path: "../packages/firebase_auth/firebase_auth_desktop"
-      relative: true
-    source: path
+      path: "."
+      ref: main
+      resolved-ref: fe89ac51bfdecc19703976477011959172da4c9f
+      url: "https://github.com/b7anka/firebase_auth_desktop"
+    source: git
     version: "1.0.2"
   firebase_auth_platform_interface:
     dependency: transitive
@@ -235,9 +237,11 @@ packages:
   firebase_core_desktop:
     dependency: transitive
     description:
-      path: "../packages/firebase_core/firebase_core_desktop"
-      relative: true
-    source: path
+      path: "."
+      ref: main
+      resolved-ref: e388c22ec87d1581f704f59640a6f4280bc0b471
+      url: "https://github.com/b7anka/firebase_core_desktop.git"
+    source: git
     version: "1.0.2"
   firebase_core_platform_interface:
     dependency: transitive
