@@ -1,0 +1,23 @@
+name: firebase_functions_dart
+description: Pure Dart implementation of FlutterFire CloudFunctions API.
+homepage: https://firebase.flutter.dev
+repository: https://github.com/invertase/flutterfire_desktop
+version: 0.1.1+2
+
+environment:
+  sdk: ">=2.19.6 <3.0.0"
+
+dependencies:
+  collection: ^1.17.0
+  firebase_auth_dart: ^1.0.1
+  firebase_core_dart: ^1.0.1
+  http: ^0.13.5
+  meta: ^1.8.0
+  storagebox: ^0.1.0+3
+
+dev_dependencies:
+  test: ^1.24.2
+
+false_secrets:
+  - /test/firebase_functions_integration_test.dart
+  - /test/firebase_functions_test.dart

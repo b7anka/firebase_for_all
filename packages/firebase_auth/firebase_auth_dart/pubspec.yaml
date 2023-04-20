@@ -1,0 +1,25 @@
+name: firebase_auth_dart
+description: Pure Dart implementation of FlutterFire Auth API
+homepage: https://firebase.flutter.dev
+repository: https://github.com/invertase/flutterfire_desktop
+version: 1.0.1
+
+environment:
+  sdk: ">=2.19.6 <3.0.0"
+
+dependencies:
+  firebase_core_dart: ^1.0.1
+  firebaseapis: ^0.1.2
+  googleapis_auth: ^1.4.0
+  http: ^0.13.5
+  meta: ^1.8.0
+  storagebox: ^0.1.0+3
+
+dev_dependencies:
+  async: ^2.10.0
+  build_runner: ^2.3.3
+  mockito: ^5.4.0
+  test: ^1.24.2
+
+false_secrets:
+  - /test/firebase_auth_dart_test.dart
