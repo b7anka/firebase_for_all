@@ -18,6 +18,7 @@ import 'firebase/firestore/windows.dart';
 import 'firebase/storage/models.dart';
 import 'firebase/storage/windows.dart';
 import 'functions.dart';
+import 'package:firedart/firedart.dart' as firedart;
 
 class FirebaseCoreForAll {
   static Future<void> initializeApp({
@@ -65,7 +66,7 @@ class FirestoreForAll {
 }
 
 class FirebaseAuthForAll {
-  static FirebaseAuth get instance {
+  static firedart.FirebaseAuth get instance {
     return Get.find<FirebaseControlPanel>().auth!;
   }
 }
@@ -86,7 +87,7 @@ class FirebaseControlPanel extends GetxController {
   FirebaseOptions? _options;
   FirestoreItem? _firestore;
   FirebaseStorageItem? _storage;
-  FirebaseAuth? _auth;
+  firedart.FirebaseAuth? _auth;
   //FirebaseFunctions? _functions;
   FirebaseControlPanel({required bool firestore, required bool storage}) {
     if (firestore) {
@@ -105,13 +106,13 @@ class FirebaseControlPanel extends GetxController {
   }
 
   void instanceAuth() {
-    _auth = FirebaseAuth.instance;
+    _auth = firedart.FirebaseAuth.instance;
   }
 
   FirebaseOptions? get options => _options;
 
   FirestoreItem? get firestore => _firestore;
-  FirebaseAuth? get auth => _auth;
+  firedart.FirebaseAuth? get auth => _auth;
   FirebaseStorageItem? get storage => _storage;
   //FirebaseFunctions? get functions => _functions;
 
