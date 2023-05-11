@@ -52,7 +52,8 @@ class FirebaseCoreForAll {
       await initStorageWindows();
     }
     if (auth) {
-      await Get.find<FirebaseControlPanel>().instanceAuth();
+      firedart.FirebaseAuth.initialize(options.apiKey, await PreferencesStore.create());
+      Get.find<FirebaseControlPanel>().instanceAuth();
     }
     //if (functions) {
     //  Get.find<FirebaseControlPanel>().instanceFunctions();
@@ -106,8 +107,8 @@ class FirebaseControlPanel extends GetxController {
     _name = name;
   }
 
-  Future<void> instanceAuth() async {
-    _auth = firedart.FirebaseAuth.initialize(options!.apiKey, await PreferencesStore.create());
+  void instanceAuth() {
+    _auth = firedart.FirebaseAuth.instance;
   }
 
   FirebaseOptions? get options => _options;
