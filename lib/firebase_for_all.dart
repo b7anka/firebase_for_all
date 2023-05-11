@@ -15,6 +15,7 @@ import 'package:firebase_auth_desktop/firebase_auth_desktop.dart'
 import 'package:get/get.dart';
 import 'firebase/firestore/bridge.dart';
 import 'firebase/firestore/windows.dart';
+import 'firebase/models/preferences_store.dart';
 import 'firebase/storage/models.dart';
 import 'firebase/storage/windows.dart';
 import 'functions.dart';
@@ -51,7 +52,7 @@ class FirebaseCoreForAll {
       await initStorageWindows();
     }
     if (auth) {
-      Get.find<FirebaseControlPanel>().instanceAuth();
+      await Get.find<FirebaseControlPanel>().instanceAuth();
     }
     //if (functions) {
     //  Get.find<FirebaseControlPanel>().instanceFunctions();
@@ -105,8 +106,8 @@ class FirebaseControlPanel extends GetxController {
     _name = name;
   }
 
-  void instanceAuth() {
-    _auth = firedart.FirebaseAuth.instance;
+  Future<void> instanceAuth() async {
+    _auth = firedart.FirebaseAuth.initialize(options!.apiKey, await PreferencesStore.create());
   }
 
   FirebaseOptions? get options => _options;
