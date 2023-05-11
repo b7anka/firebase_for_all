@@ -5,7 +5,7 @@ import '../../../firebase_for_all.dart';
 
 Future<void> initFirestoreWindows() async {
   if (Get.find<FirebaseControlPanel>().options != null) {
-    Firestore.initialize(Get.find<FirebaseControlPanel>().options!.projectId);
+    Firestore.initialize(Get.find<FirebaseControlPanel>().options!.projectId, useApplicationDefaultAuth: true);
   } else {
     if (kDebugMode) {
       print("FirebaseOptions cant be null!!");

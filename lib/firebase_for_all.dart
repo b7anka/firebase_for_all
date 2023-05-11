@@ -45,15 +45,15 @@ class FirebaseCoreForAll {
           name: Get.find<FirebaseControlPanel>().name,
           options: Get.find<FirebaseControlPanel>().options);
     }
+    if (auth) {
+      firedart.FirebaseAuth.initialize(options.apiKey, await PreferencesStore.create());
+      Get.find<FirebaseControlPanel>().instanceAuth();
+    }
     if (!isValid() && firestore) {
       await initFirestoreWindows();
     }
     if (!isValid() && storage) {
       await initStorageWindows();
-    }
-    if (auth) {
-      firedart.FirebaseAuth.initialize(options.apiKey, await PreferencesStore.create());
-      Get.find<FirebaseControlPanel>().instanceAuth();
     }
     //if (functions) {
     //  Get.find<FirebaseControlPanel>().instanceFunctions();
